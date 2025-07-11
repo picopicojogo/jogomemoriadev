@@ -1,6 +1,9 @@
+/* Cartoon font via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Luckiest Guy', cursive;
   margin: 0;
   padding: 0;
 }
@@ -76,6 +79,8 @@ header p {
   user-select: none;
   transition: background-color 0.3s, transform 0.2s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
   color: transparent;
 }
 
@@ -89,6 +94,24 @@ header p {
   background: #c6ffc1;
   pointer-events: none;
   box-shadow: 0 0 10px 2px #4caf50;
+}
+
+/* MAIN CHARACTER IMAGE - fully fitted to card */
+.card img.character-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensures full image fits without cropping */
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* hide image after flip */
+.card.flip img.character-image {
+  display: none;
 }
 
 button {
@@ -159,5 +182,9 @@ button.hidden {
   button {
     padding: 8px 15px;
     font-size: 0.9rem;
+  }
+
+  .card img.character-image {
+    border-radius: 8px;
   }
 }
