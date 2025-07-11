@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio Pico-Pico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Desafio Pico-Pico</h1>
+      <p>Jogo da Memória – Teste os seus limites!</p>
+    </header>
+
+    <div class="score-panel">
+  <span>🧠 Jogadas: <span id="moves">0</span></span>
+  <span>🏆 Pontos: <span id="score">0</span></span>
+  <span>⏱️ Tempo: <span id="timer">00:00</span></span>
+  <span>🎯 Nível: <span id="level">1</span></span>
+</div>
+
+    <h2 id="stage-title">Fase 1: Fácil</h2>
+
+    <div id="game-board" class="game-board"></div>
+
+    <button id="restart-button">🔁 Reiniciar</button>
+    <button id="next-button" class="hidden">➡️ Próxima Fase</button>
+    <button id="share-button" class="hidden">📤 Partilhar Resultado</button>
+    <button id="toggle-music-btn">🔇 Música Desligada</button>
+
+    <canvas id="shareCanvas"></canvas>
+
+    <div id="ranking" class="hidden">
+      <h3>🏅 Top 10 Jogadores</h3>
+      <ul id="ranking-list"></ul>
+    </div>
+  </div>
+
+  <!-- Sons -->
+  <audio id="sound-match" src="acerto.mp3" preload="auto"></audio>
+  <audio id="sound-error" src="erro.mp3" preload="auto"></audio>
+  <audio id="sound-win" src="vitoria.mp3" preload="auto"></audio>
+
+  <!-- Música de fundo -->
+  <audio id="bg-music" src="musica-fundo.mp3" loop preload="auto"></audio>
+  
+  <script src="script.js"></script>
+</body>
+</html>

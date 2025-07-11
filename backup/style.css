@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #ffe259, #ffa751);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ff9900;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.score-panel {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  gap: 15px;
+}
+
+#stage-title {
+  margin: 10px 0 20px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.game-board {
+  background-color: #fffbe6;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe599;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: transparent;
+}
+
+.card.flip {
+  background: #ffffff;
+  transform: scale(1.1);
+  color: #000;
+}
+
+.card.matched {
+  background: #c6ffc1;
+  pointer-events: none;
+  box-shadow: 0 0 10px 2px #4caf50;
+}
+
+button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover:not(.hidden) {
+  background-color: #ffaa00;
+}
+
+button.hidden {
+  display: none !important;
+}
+
+#toggle-music-btn {
+  margin-top: 10px;
+  background-color: #0099ff;
+  color: white;
+  font-weight: 600;
+}
+
+#toggle-music-btn:hover {
+  background-color: #007acc;
+}
+
+#ranking {
+  text-align: left;
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  border-top: 2px solid #ffcc00;
+  padding-top: 10px;
+}
+
+#ranking h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 700;
+}
+
+#ranking-list {
+  list-style: disc inside;
+  color: #555;
+  padding-left: 10px;
+  font-size: 0.95rem;
+}
+
+#shareCanvas {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
