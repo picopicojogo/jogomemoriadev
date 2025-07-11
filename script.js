@@ -229,4 +229,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 restartBtn.addEventListener("click", () => {
-  score
+  score = 0;
+  faseAtual = 0;
+  iniciarJogo();
+});
