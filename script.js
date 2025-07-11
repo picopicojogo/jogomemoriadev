@@ -13,7 +13,7 @@ let tempo = 0;
 let timer;
 
 // 👉 Nome do arquivo da imagem da personagem principal
-const personagemImagem = "CnD5B8PNgpnzdDjNyx4wm.png";
+const personagemImagem = "carapicopico.png";
 
 const board = document.getElementById("game-board");
 const stageTitle = document.getElementById("stage-title");
