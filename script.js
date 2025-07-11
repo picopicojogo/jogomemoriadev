@@ -12,7 +12,6 @@ let score = 0;
 let tempo = 0;
 let timer;
 
-// 👉 Nome do arquivo da imagem da personagem principal
 const personagemImagem = "https://picopicojogo.github.io/jogomemoriadev/carapicopico.png";
 
 const board = document.getElementById("game-board");
@@ -97,12 +96,16 @@ function criarCarta(emoji) {
 
   const imagem = document.createElement("img");
   imagem.src = personagemImagem;
-  imagem.alt = "Personagem Principal";
+  imagem.alt = "Personagem";
   imagem.className = "character-image";
 
+  const emojiSpan = document.createElement("span");
+  emojiSpan.textContent = emoji;
+  emojiSpan.className = "emoji";
+  emojiSpan.style.visibility = "hidden";
+
   carta.appendChild(imagem);
-  carta.textContent = emoji;
-  carta.style.color = "transparent";
+  carta.appendChild(emojiSpan);
   carta.addEventListener("click", virarCarta);
   return carta;
 }
@@ -120,11 +123,12 @@ function virarCarta() {
   if (cartasSelecionadas.length === 2 || this.classList.contains("flip")) return;
 
   this.classList.add("flip");
-
   const img = this.querySelector("img");
-  if (img) img.style.display = "none";
+  const emojiSpan = this.querySelector(".emoji");
 
-  this.style.color = "#000";
+  if (img) img.style.display = "none";
+  if (emojiSpan) emojiSpan.style.visibility = "visible";
+
   cartasSelecionadas.push(this);
 
   if (cartasSelecionadas.length === 2) {
@@ -157,13 +161,12 @@ function virarCarta() {
         c1.classList.remove("flip");
         c2.classList.remove("flip");
 
-        const img1 = c1.querySelector("img");
-        const img2 = c2.querySelector("img");
-        if (img1) img1.style.display = "block";
-        if (img2) img2.style.display = "block";
+        if (c1.querySelector("img")) c1.querySelector("img").style.display = "block";
+        if (c2.querySelector("img")) c2.querySelector("img").style.display = "block";
 
-        c1.style.color = "transparent";
-        c2.style.color = "transparent";
+        if (c1.querySelector(".emoji")) c1.querySelector(".emoji").style.visibility = "hidden";
+        if (c2.querySelector(".emoji")) c2.querySelector(".emoji").style.visibility = "hidden";
+
         cartasSelecionadas = [];
       }, 800);
     }
@@ -235,5 +238,8 @@ restartBtn.addEventListener("click", () => {
   faseAtual = 0;
   iniciarJogo();
 });
+
 shareBtn.addEventListener("click", gerarImagemPartilha);
+
+// Inicia o jogo automaticamente ao carregar a página
 iniciarJogo();
