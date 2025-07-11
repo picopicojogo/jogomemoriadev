@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jogo Oficial da Memória do Pico-Pico" />
   <title>Desafio Pico-Pico</title>
+
+  <!-- Cartoon font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,11 +20,11 @@
     </header>
 
     <div class="score-panel">
-  <span>🧠 Jogadas: <span id="moves">0</span></span>
-  <span>🏆 Pontos: <span id="score">0</span></span>
-  <span>⏱️ Tempo: <span id="timer">00:00</span></span>
-  <span>🎯 Nível: <span id="level">1</span></span>
-</div>
+      <span>🧠 Jogadas: <span id="moves">0</span></span>
+      <span>🏆 Pontos: <span id="score">0</span></span>
+      <span>⏱️ Tempo: <span id="timer">00:00</span></span>
+      <span>🎯 Nível: <span id="level">1</span></span>
+    </div>
 
     <h2 id="stage-title">Fase 1: Fácil</h2>
 
@@ -44,7 +50,8 @@
 
   <!-- Música de fundo -->
   <audio id="bg-music" src="musica-fundo.mp3" loop preload="auto"></audio>
-  
+
+  <!-- Game Script -->
   <script src="script.js"></script>
 </body>
 </html>
