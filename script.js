@@ -12,6 +12,9 @@ let score = 0;
 let tempo = 0;
 let timer;
 
+// 👉 Nome do arquivo da imagem da personagem principal
+const personagemImagem = "CnD5B8PNgpnzdDjNyx4wm.png";
+
 const board = document.getElementById("game-board");
 const stageTitle = document.getElementById("stage-title");
 const movesSpan = document.getElementById("moves");
@@ -93,13 +96,13 @@ function criarCarta(emoji) {
   carta.dataset.emoji = emoji;
 
   const imagem = document.createElement("img");
-  imagem.src = "carapicopico.png"; // Your uploaded image
-  imagem.alt = "Clica para revelar";
+  imagem.src = personagemImagem;
+  imagem.alt = "Personagem Principal";
   imagem.className = "character-image";
 
   carta.appendChild(imagem);
   carta.textContent = emoji;
-  carta.style.color = "transparent"; // Hide emoji initially
+  carta.style.color = "transparent";
   carta.addEventListener("click", virarCarta);
   return carta;
 }
@@ -121,7 +124,7 @@ function virarCarta() {
   const img = this.querySelector("img");
   if (img) img.style.display = "none";
 
-  this.style.color = "#000"; // Reveal emoji
+  this.style.color = "#000";
   cartasSelecionadas.push(this);
 
   if (cartasSelecionadas.length === 2) {
@@ -217,7 +220,6 @@ function gerarImagemPartilha() {
   link.click();
 }
 
-// Controls
 nextBtn.addEventListener("click", () => {
   faseAtual++;
   if (faseAtual >= emojisPorFase.length) {
@@ -233,3 +235,5 @@ restartBtn.addEventListener("click", () => {
   faseAtual = 0;
   iniciarJogo();
 });
+shareBtn.addEventListener("click", gerarImagemPartilha);
+iniciarJogo();
