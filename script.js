@@ -12,7 +12,7 @@ let score = 0;
 let tempo = 0;
 let timer;
 
-const personagemImagem = "https://picopicojogo.github.io/jogomemoriadev/carapicopico.png";
+const personagemImagem = "carapicopico.png";
 
 const board = document.getElementById("game-board");
 const stageTitle = document.getElementById("stage-title");
