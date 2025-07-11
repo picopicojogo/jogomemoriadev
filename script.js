@@ -13,7 +13,7 @@ let tempo = 0;
 let timer;
 
 // 👉 Nome do arquivo da imagem da personagem principal
-const personagemImagem = "carapicopico.png";
+const personagemImagem = "https://picopicojogo.github.io/jogomemoriadev/carapicopico.png";
 
 const board = document.getElementById("game-board");
 const stageTitle = document.getElementById("stage-title");
