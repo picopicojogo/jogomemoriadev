@@ -93,8 +93,8 @@ function criarCarta(emoji) {
   carta.dataset.emoji = emoji;
 
   const imagem = document.createElement("img");
-  imagem.src = "CnD5B8PNgpnzdDjNyx4wm.png"; // Your uploaded image
-  imagem.alt = "Personagem Principal";
+  imagem.src = "carapicopico.png"; // Your uploaded image
+  imagem.alt = "Clica para revelar";
   imagem.className = "character-image";
 
   carta.appendChild(imagem);
