@@ -80,22 +80,9 @@ header p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  color: transparent;
 }
 
-.card.flip {
-  background: #ffffff;
-  transform: scale(1.1);
-  color: #000;
-}
-
-.card.matched {
-  background: #c6ffc1;
-  pointer-events: none;
-  box-shadow: 0 0 10px 2px #4caf50;
-}
-
-/* Imagem da cara do Pico-Pico */
+/* Imagem da personagem */
 .card img.character-image {
   position: absolute;
   top: 0;
@@ -108,10 +95,36 @@ header p {
   z-index: 1;
 }
 
+/* Emoji oculto inicialmente */
+.card .emoji {
+  font-size: 2rem;
+  z-index: 2;
+  position: relative;
+  visibility: hidden;
+}
+
+/* Emoji revelado ao virar */
+.card.flip .emoji {
+  visibility: visible;
+}
+
+/* Esconde imagem ao virar */
 .card.flip img.character-image {
   display: none;
 }
 
+.card.flip {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+.card.matched {
+  background: #c6ffc1;
+  pointer-events: none;
+  box-shadow: 0 0 10px 2px #4caf50;
+}
+
+/* Botões */
 button {
   background-color: #ffcc00;
   border: none;
@@ -142,6 +155,7 @@ button.hidden {
   background-color: #007acc;
 }
 
+/* Ranking */
 #ranking {
   text-align: left;
   margin-top: 20px;
@@ -167,19 +181,20 @@ button.hidden {
   display: none;
 }
 
+/* Responsivo */
 @media (max-width: 400px) {
   .card {
     width: 50px;
     height: 50px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .card img.character-image {
+    border-radius: 8px;
   }
 
   button {
     padding: 8px 15px;
     font-size: 0.9rem;
-  }
-
-  .card img.character-image {
-    border-radius: 8px;
   }
 }
